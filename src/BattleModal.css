@@ -16,13 +16,12 @@
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
-  text-align: left;
+  box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
-  font-size: 14px; /* Diminuir tamanho da fonte */
-  position: relative;
 }
 
 .close {
@@ -32,55 +31,110 @@
   right: 20px;
   font-size: 28px;
   font-weight: bold;
-  background-color: transparent; /* Remover cor de fundo */
-  border: none; /* Remover borda */
-  cursor: pointer; /* Adicionar cursor de ponteiro */
-  padding: 0; /* Remover preenchimento */
-  outline: none; /* Remover contorno */
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-  color: #000; /* Mudar cor no hover e foco */
+  color: #000;
   text-decoration: none;
-  cursor: pointer;
 }
 
-.modal-body {
+.modal-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #4caf50;
+}
+
+.battle-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.left-column {
+.hero-image-container {
+  text-align: center;
   flex: 1;
-  min-width: 300px;
-  max-width: 400px;
+  max-width: 250px;
 }
 
 .hero-image {
+  width: 180px;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.hero-info h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
   text-align: center;
 }
 
-.hero-image img {
-  max-width: 80%; /* Diminuir tamanho da imagem */
-  height: auto;
-}
-
-.hero-details {
-  padding: 20px;
-}
-
-.right-column {
+.comparison {
   flex: 2;
-  min-width: 300px;
-  max-width: 600px;
-  padding: 20px;
+  max-width: 500px;
 }
 
-.right-column h4 {
-  margin-top: 20px;
-  font-size: 18px; /* Aumentar tamanho da fonte */
-  border-bottom: 2px solid #000; /* Adicionar linha inferior */
-  padding-bottom: 5px;
+.comparison table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.comparison th,
+.comparison td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  width: 33.33%;
+}
+
+.comparison th {
+  background-color: #f4f4f4;
+}
+
+.comparison .attribute-column {
+  background-color: #fff;
+}
+
+.comparison tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.total-row {
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+
+.highlight {
+  background-color: #d4edda;
+}
+
+.lowlight {
+  background-color: #f8d7da;
+}
+
+.default {
+  background-color: #fff;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .hero-image {
+    width: 120px;
+  }
+
+  .comparison table {
+    font-size: 14px;
+  }
 }
